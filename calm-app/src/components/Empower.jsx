@@ -11,12 +11,14 @@ import {
 import Side from "./Side";
 
 const Empower = ({ quotes }) => {
+
+
   return (
     <main className="overflow-hidden">
       <img src={wavy} alt="" className="bg-[#C2D738]" />
       <div className="h-72 bg-[#C2D738] rounded-bl-3xl rounded-br-3xl flex">
         <div className="">
-          <img src={vec5} alt="" className="w-11" />
+          <img src={vec5} alt="" className="w-40" />
         </div>
         <div>
           <div className="flex items-center justify-center text-[1.1em] md:text-3xl font-bold">
@@ -76,6 +78,8 @@ const Empower = ({ quotes }) => {
                       <p>{q.quote}</p>
                     </CarouselItem>
                   ))} */}
+
+               
 
                 <CarouselItem>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Id

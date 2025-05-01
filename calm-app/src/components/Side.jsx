@@ -1,14 +1,8 @@
 import React from "react";
 
-const Side = ({ quotes }) => {
+const Side = () => {
   return (
-    <div>
-      {quotes.map((q) => (
-        <p>
-          <p>{q.quote}</p>
-        </p>
-      ))}
-    </div>
+    <div>side</div>
   );
 };
 

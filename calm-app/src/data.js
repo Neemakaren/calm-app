@@ -2,34 +2,34 @@ import { vec1, vec3 } from "./assets/images";
 
 export const data = [
   {
-    id: "recZkNf2kwmdBcqd0",
-    name: "item1",
-    description: "Meditation",
-    profile: vec3,
+    "id": "recZkNf2kwmdBcqd0",
+    "name": "item1",
+    "description": "Meditation",
+    
   },
   {
-    id: "recEHmzvupvT8ZONH",
-    name: "item2",
-    description: "Song",
-    profile: vec3,
+    "id": "recEHmzvupvT8ZONH",
+    "name": "item2",
+    "description": "Song",
+    
   },
   {
-    id: "rec5NBwZ5zCD9nfF0",
-    name: "item3",
-    description: "Stars",
-    profile: vec3,
+    "id": "rec5NBwZ5zCD9nfF0",
+    "name": "item3",
+    "description": "Stars",
+    
   },
   {
-    id: "recd1jIVIEChmiwhe",
-    name: "item4",
-    description: "Movie",
-    profile: vec3,
+    "id": "recd1jIVIEChmiwhe",
+    "name": "item4",
+    "description": "Movie",
+    
   },
   {
-    id: "recoM2MyHJGHLVi5l",
-    name: "item5",
-    description: "Zoela",
-    profile: vec3,
+    "id": "recoM2MyHJGHLVi5l",
+    "name": "item5",
+    "description": "Zoela",
+    
   },
 ];
 
@@ -95,10 +95,10 @@ export const moodButtons =
 // ];
 
 
-export const fetchData = async (url) => {
-  const res = await fetch(url);
-  const data = await res.json();
+// export const fetchData = async (url) => {
+//   const res = await fetch(url);
+//   const data = await res.json();
 
-  return data;
-};
+//   return data;
+// };
 

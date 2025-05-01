@@ -6,56 +6,54 @@ import { moodButtons } from "./data";
 import Journal from "./pages/Journal";
 import Distraction from "./pages/Distraction";
 import { Navbar } from "./components";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App() {
   const [quotes, setQuotes] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [data, setData] = useState([])
-  const [selectedCategory, setSelectedCategory] = useState(null);
-
-
-
-   useEffect(() => {
-     const loadPost = async () => {
-       setLoading(true);
-       const response = await axios.get("./quotes.json");
-       setQuotes(response.data);
-       setLoading(false);
-     };
-     loadPost();
-   }, []);
-
-
-   useEffect(() => {
-     const loadData = async () => {
-       setLoading(true);
-      const response = await axios.get("./buttons.json");
-       setData(response.data);
-       setLoading(false);
-     };
-     loadData();
-   }, []);
-
   
 
+  useEffect(() => {
+    const loadPost = async () => {
+      setLoading(true);
+      const response = await axios.get("./quotes.json");
+      setQuotes(response.data);
+      setLoading(false);
+    };
+    loadPost();
+  }, []);
+
+  // useEffect(() => {
+  //   const loadData = async () => {
+  //     setLoading(true);
+  //     const response = await axios.get("./buttons.json");
+  //     setButtonValue(response.data);
+  //     setLoading(false);
+  //   };
+  //   loadData();
+  // }, []);
 
   return (
     <>
-    <Navbar />
-    {/* {
+      <BrowserRouter>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home quotes={quotes} />} />
+          <Route path="/journal" element={<Journal />} />
+          {/* <Route path="distraction">
+            <Route index element={<Home />} />
+            <Route path=":choice" element={<Distraction />} />
+          </Route> */}
+          <Route path="/distraction/:cheerId" element={<Distraction />} />
+        </Routes>
+      </BrowserRouter>
+
+      {/* {
       data.map((d) => (
         <button onClick={() => setSelectedCategory(d)}>{d}</button>
       ))
     }
     <div>{JSON.stringify(selectedCategory)}</div> */}
-      <Home
-        quotes={quotes}
-        data={data}
-        selectedCategory={selectedCategory}
-        setSelectedCategory={setSelectedCategory}
-      />
-      <Journal />
-      {/* <Distraction /> */}
     </>
   );
 }

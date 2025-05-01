@@ -3,6 +3,7 @@ import { AiOutlineClose } from "react-icons/ai";
 
 import { HiMenuAlt3 } from "react-icons/hi";
 import { vec8 } from "../assets/images";
+import { Link } from "react-router-dom";
 
 
 const Navbar = () => {
@@ -28,15 +29,15 @@ const Navbar = () => {
         <div className="flex">
           <div className="flex-row items-center transition duration-5 z-10   pt-1 text-white font-bold cursor-pointer list-none">
             <div className="hidden space-x-6 md:flex md:px-2 list-none lg:px-10 text-[1.1em] bg-transparent">
-              <li to="/" className="hover:text-[#A5A5A5]">
+              <Link to="/" className="hover:text-[#A5A5A5]">
                 Home
-              </li>
-              <a href="#about" className="hover:text-[#A5A5A5]">
-                Mood
-              </a>
-              <li to="/blogpage" className="hover:text-[#A5A5A5]">
-                Projects
-              </li>
+              </Link>
+              <Link to="/journal" className="hover:text-[#A5A5A5]">
+                Journal
+              </Link>
+              {/* <Link to="/distraction" className="hover:text-[#A5A5A5]">
+                Distraction
+              </Link> */}
             </div>
           </div>
           <button
